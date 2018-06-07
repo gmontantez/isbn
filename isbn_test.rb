@@ -8,7 +8,7 @@ class Isbn_test < Minitest::Test
 
 	def test_num_length_valid_ten_digit_number
 		num = "1235789543"
-		assert_equal([1235789543],num_length(num))
+		assert_equal([123578954],num_length(num))
 	end
 
 	def test_num_length_number_not_ten_digits
@@ -18,12 +18,12 @@ class Isbn_test < Minitest::Test
 
 	def test_remove_spaces
 		num = "194 382 9087"
-		assert_equal([1943829087],num_length(num))
+		assert_equal([194382908],num_length(num))
 	end
 
 	def test_remove_hyphens
 		num = "1-943-829-081"
-		assert_equal([1943829081],num_length(num))
+		assert_equal([194382908],num_length(num))
 	end
 
 	def test_num_length_function_x_at_end
@@ -129,5 +129,35 @@ class Isbn_test < Minitest::Test
 	def test_num_cap_function_with_ten_digits_plus_symbols
 		num = "98&25$47@6%548"
 		assert_equal("Invalid ISBN",num_length(num))
+	end
+
+	def test_check_sum_comparison_invalid_isbn
+		num = "7432456891"
+		assert_equal("Result-Invalid ISBN",check_sum(num))
+	end
+
+	def test_check_sum_comparison2_invalid_isbn
+		num = "2546789123"
+		assert_equal("Result-Invalid ISBN",check_sum(num))
+	end
+
+	def test_check_sum_comparison3_invalid_isbn
+		num = "6856972348"
+		assert_equal("Result-Invalid ISBN",check_sum(num))
+	end
+
+	def test_check_sum_comparison_valid_isbn
+		num = "2546789124"
+		assert_equal("Result-Valid ISBN",check_sum(num))
+	end
+
+	def test_check_sum_comparison2_valid_isbn
+		num = "6856972342"
+		assert_equal("Result-Valid ISBN",check_sum(num))
+	end
+
+	def test_check_sum_comparison3_valid_isbn
+		num = "7432456493"
+		assert_equal("Result-Valid ISBN",check_sum(num))
 	end
 end
