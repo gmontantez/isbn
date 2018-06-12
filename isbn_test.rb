@@ -160,4 +160,19 @@ class Isbn_test < Minitest::Test
 		num = "7432456493"
 		assert_equal("Result-Valid ISBN",check_sum(num))
 	end
+
+	def test_if_last_digit_is_x_checksum_is_10
+		num = "869543256x"
+		assert_equal("Result-Valid ISBN",check_sum(num))
+	end
+
+	def test_num_length_function_with_thirteen_digit_places
+		num = "8325497862547"
+		assert_equal(132,num_length(num))
+	end
+
+	def test_num_length_function_with_thirteen_and_symbols
+		num = "98&25$47@6%54"
+		assert_equal("Invalid ISBN",num_length(num))
+	end
 end
