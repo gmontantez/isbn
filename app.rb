@@ -1,5 +1,5 @@
 require 'sinatra'
-require_relative 'isbn.rb'
+require_relative 'my_isbn.rb'
 
 enable :sessions
 

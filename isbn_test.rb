@@ -8,7 +8,7 @@ class Isbn_test < Minitest::Test
 
 	def test_num_length_valid_ten_digit_number
 		num = "1235789543"
-		assert_equal("Result-Invalid ISBN",num_length(num))
+		assert_equal("Result-Valid ISBN",num_length(num))
 	end
 
 	def test_num_length_number_not_ten_digits
@@ -26,6 +26,16 @@ class Isbn_test < Minitest::Test
 		assert_equal("Result-Invalid ISBN",num_length(num))
 	end
 
+	def test_num_length_last_digit_is_x_at_end_valid_isbn
+		num = "194382908x"
+		assert_equal("Result-Valid ISBN",check_x(num))
+	end
+
+	def test_num_length_last_digit_is_X_at_end_valid_isbn
+		num = "194382908X"
+		assert_equal("Result-Valid ISBN",check_x(num))
+	end
+
 	def test_num_length_function_x_at_end_invalid
 		num = "653256789x"
 		assert_equal("Result-Invalid ISBN",num_length(num))
@@ -36,14 +46,14 @@ class Isbn_test < Minitest::Test
 		assert_equal("Result-Invalid ISBN",num_length(num))
 	end
 
-	def test_num_length_ten_digits_x_remainder_is_10_valid
+	def test_num_length_ten_digits_x_remainder_is_4_invalid
 		num = "869543256x"
-		assert_equal("Result-Valid ISBN",num_length(num))
+		assert_equal("Result-Invalid ISBN",num_length(num))
 	end
 
-	def test_num_length_ten_digits_X_remainder_is_10_valid
+	def test_num_length_ten_digits_X_remainder_is_4_invalid
 		num = "869543256X"
-		assert_equal("Result-Valid ISBN",num_length(num))
+		assert_equal("Result-Invalid ISBN",num_length(num))
 	end
 
 	def test_ten_digit_all_x_invalid
@@ -73,7 +83,7 @@ class Isbn_test < Minitest::Test
 
 	def test_number_with_ten_digits_letter_at_end
 		num = "653256789a"
-		assert_equal("Result-Invalid ISBN",num_length(num))
+		assert_equal("Invalid ISBN",num_length(num))
 	end
 
 	def test_number_with_ten_digits_plus_letters_not_at_end
@@ -121,19 +131,24 @@ class Isbn_test < Minitest::Test
 		assert_equal("Invalid ISBN",num_length(num))
 	end
 
+	def test_check_x_last_digit_is_x_at_end_valid_isbn
+		num = "194382908x"
+		assert_equal("Result-Valid ISBN",check_x(num))
+	end
+
+	def test_check_x_last_digit_is_X_at_end_valid_isbn
+		num = "194382908X"
+		assert_equal("Result-Valid ISBN",check_x(num))
+	end
+
 	def test_check_x_function_x_at_end_invalid_isbn
 		num = "653256789x"
 		assert_equal("Result-Invalid ISBN",check_x(num))
 	end
 
-	def test_num_length_function_X_at_end_invalid
+	def test_check_x_function_X_at_end_invalid_isbn
 		num = "653256789X"
 		assert_equal("Result-Invalid ISBN",check_x(num))
-	end
-
-	def test_ten_digits_X_remainder_is_10_valid
-		num = "869543256X"
-		assert_equal("Result-Valid ISBN",check_x(num))
 	end
 
 	def test_check_x_function_x_not_at_end
@@ -191,34 +206,45 @@ class Isbn_test < Minitest::Test
 		assert_equal("Result-Invalid ISBN",check_ten(num))
 	end
 
-	def test_check_ten_comparison_valid_isbn
+	def test_check_ten_comparison3_invalid_isbn
 		num = "2546789124"
-		assert_equal("Result-Valid ISBN",check_ten(num))
+		assert_equal("Result-Invalid ISBN",check_ten(num))
 	end
 
-	def test_check_ten_comparison2_valid_isbn
+	def test_check_ten_comparison4_invalid_isbn
+		num = "7432456493"
+		assert_equal("Result-Invalid ISBN",check_ten(num))
+	end
+
+	def test_check_ten_comparison_valid_isbn
 		num = "6856972342"
 		assert_equal("Result-Valid ISBN",check_ten(num))
 	end
 
-	def test_check_ten_comparison3_valid_isbn
-		num = "7432456493"
+	def test_check_ten_last_digit_is_x_at_end_valid
+		num = "194382908x"
 		assert_equal("Result-Valid ISBN",check_ten(num))
 	end
 
-	def test_if_last_digit_is_x_remainder_is_10_valid
+	def test_check_ten_last_digit_is_X_at_end_valid
+		num = "194382908X"
+		assert_equal("Result-Valid ISBN",check_ten(num))
+	end
+
+
+	def test_if_last_digit_is_x_at_end_invalid
 		num = "869543256x"
-		assert_equal("Result-Valid ISBN",check_ten(num))
+		assert_equal("Result-Invalid ISBN",check_ten(num))
 	end
 
-	def test_num_length_function_X_at_end_invalid
+	def test_ten_digits_X_at_end_invalid
 		num = "653256789X"
 		assert_equal("Result-Invalid ISBN",check_ten(num))
 	end
 
-	def test_num_length_ten_digits_X_remainder_is_10_valid
+	def test_ten_digits_X_remainder_is_not_10_invalid
 		num = "869543256X"
-		assert_equal("Result-Valid ISBN",check_ten(num))
+		assert_equal("Result-Invalid ISBN",check_ten(num))
 	end
 
 	def test_if_last_digit_is_x_remainder_is_not_10_invalid
@@ -228,7 +254,7 @@ class Isbn_test < Minitest::Test
 
 	def test_valid_ten_digit_number_thirteen_in_length_with_spaces
 		num = "123 578 9543"
-		assert_equal("Result-Invalid ISBN",num_length(num))
+		assert_equal("Result-Valid ISBN",num_length(num))
 	end
 
 	def test_with_thirteen_digit_places_valid_isbn
