@@ -57,25 +57,25 @@ def check_thirteen(num)
 	str = orig_str.gsub(/([- ])/, '')
 	new_str = str.gsub(/[^Xx0-9 ]/, '')
 	num_str = new_str.split(//)
-	num_str.each do |x| #1
+	num_str.each do |x|
 		full_array << x.to_i
-	end #end 1
+	end
 	popped = full_array.pop
-	full_array.each_with_index do |item,index| # 2
-		if (index.odd?) #3
+	full_array.each_with_index do |item,index|
+		if (index.odd?)
 			odds.push(item*3)
 		else (index.even?)
 			evens.push(item)
-		end # end 3
-	end # end 2
-	my_sum = odds.my_sum+evens.my_sum
-	my_mod = my_sum % 10
-	my_remainder = 10 - my_mod
-	if popped == my_remainder # 4
+		end
+	end 
+	sum = odds.sum+evens.sum
+	mod = sum % 10
+	remainder = 10 - mod
+	if popped == remainder
 		"Result-Valid ISBN"
 	else
 		"Result-Invalid ISBN"
-	end # end 4
+	end
 end
 
 def check_ten(num)
@@ -104,12 +104,12 @@ def check_ten(num)
 		index +=1
 		value_arr << value*index
 	end
-	my_sum = value_arr.my_sum
-	my_remainder = my_sum%11
-	# p my_remainder
-	if match_element == my_remainder
+	sum = value_arr.sum
+	remainder = sum%11
+	# p remainder
+	if match_element == remainder
 		"Result-Valid ISBN"
-	elsif popped_element == "x" && my_remainder == 10
+	elsif popped_element == "x" && remainder == 10
 		"Result-Valid ISBN"
 	else
 		"Result-Invalid ISBN"
