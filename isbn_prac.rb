@@ -48,9 +48,9 @@ def check_x(num)
 		partial_array = num_str.pop
 		new_array << num_str.join.to_i
 		check_ten(num)
-		else num_str[0]..num_str[8] == "x"
-		"Invalid ISBN"
-		end
+		# else num_str[0]..num_str[8] == "x"
+		# "Invalid ISBN"
+		# end
 	else
 	"Invalid ISBN"
 	end
