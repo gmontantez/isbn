@@ -56,15 +56,14 @@ def check_thirteen(num)
 		full_array << x.to_i
 	end
 	popped = full_array.pop
-	full_array.each_with_index do |item,index|
 		if (index.odd?)
 			odds.push(item*3)
 		else (index.even?)
-			evens.push(item*1)
-		end
+			evens.push(item)
+		end 
 	end
 	sum = odds.sum+evens.sum
-	mod = sum % 10 
+	mod = sum % 10
 	remainder = 10-mod
 	if popped == remainder
 		"Result-Valid ISBN"
@@ -74,26 +73,24 @@ def check_thirteen(num)
 end
 
 def check_ten(num)
-	answer_array = []
 	new_array = []
 	full_array = []
 	new_num_array = []
+	value_arr = []
 	orig_str = num.downcase
 	str = orig_str.gsub(/([- ])/, '')
 	new_str = str.gsub(/[^Xx0-9 ]/, '')
 	num_str = new_str.split(//)
 	popped_element = num_str.pop
 	match_element = popped_element.to_i
-	new_array << num_str.join
-	new_num_str = new_array.join
-	int = new_num_str.to_i
-	new_num_array << int
-  	new_num = new_num_array.zip([1,2,3,4,5,6,7,8,9])
-	new_num.map! do |v,i|
-	  answer = v*i
-	  answer_array << answer 	
+	num_str.each do |x|
+		full_array << x.to_i
 	end
-	sum = answer_array.sum
+	full_array.each_with_index.map do |value,index|
+		index +=1
+		value_arr << value*index
+	end
+	sum = value_arr.sum
 	remainder = sum%11
 	if match_element == remainder
 		"Result-Valid ISBN"
