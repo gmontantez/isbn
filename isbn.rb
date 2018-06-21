@@ -116,6 +116,24 @@ def check_ten(num)
 	end
 end
 
+# def csv_read(isbn,status)
+# 	data_array = []
+# 	data = CSV.read("isbn_file.csv")
+# 	data.each do |isbn|
+# 		isbn = num_length(num)
+# 		data_array << isbn
+# 		p data_array
+# 	end
+# 	open_file = CSV.open('file.csv', 'wb') do |csv|
+# 		csv << ["ISBN", "Status"]
+# 		csv << ["#{isbn}", "#{valid}"]
+# 	end
+# end
+
+
+
+# csv_open("1234567890", "Invalid")
+
 # p num_length("653256789a")
 # p check_x("653256789a")
 # p check_ten("653256789a")

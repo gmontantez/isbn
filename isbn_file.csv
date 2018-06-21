@@ -1,0 +1,7 @@
+ISBN,Status
+1234567890,Invalid
+54326,Invalid
+1234567894,Result-Invalid ISBN
+123456789X,Result-Valid ISBN
+123456789X,Result-Valid ISBN
+123456789X,Result-Valid ISBN
