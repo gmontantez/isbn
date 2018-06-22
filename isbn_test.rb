@@ -16,12 +16,22 @@ class Isbn_test < Minitest::Test
 		assert_equal("Invalid ISBN",num_length(num))
 	end
 
-	def test_remove_spaces
+	def test_remove_spaces_valid_ten_digit_number
+		num = "12 357  89543"
+		assert_equal("Result-Valid ISBN",num_length(num))
+	end
+
+	def test_remove_spaces_invalid_isbn
 		num = "194 382 9087"
 		assert_equal("Result-Invalid ISBN",num_length(num))
 	end
 
-	def test_remove_hyphens
+	def test_remove_hyphens_and_spaces_valid_isbn
+		num = "12 357  89-543"
+		assert_equal("Result-Invalid ISBN",num_length(num))
+	end
+
+	def test_remove_hyphens_invalid_isbn
 		num = "1-943-829-081"
 		assert_equal("Result-Invalid ISBN",num_length(num))
 	end

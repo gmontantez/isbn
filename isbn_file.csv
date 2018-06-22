@@ -3,5 +3,35 @@ ISBN,Status
 54326,Invalid
 1234567894,Result-Invalid ISBN
 123456789X,Result-Valid ISBN
-123456789X,Result-Valid ISBN
-123456789X,Result-Valid ISBN
+83$2549@786%45,Invalid length-over 13
+869543256x,Result-Invalid ISBN
+1235789543,Result-Valid ISBN
+"""12 357  89543""",Invalid ISBN
+12 357  89543,Result-Valid ISBN
+194 382-9087,Result-Invalid ISBN
+12 357  89-543,Result-Valid ISBN
+194382908x,Result-Valid ISBN
+xxxxxxxxxx,Invalid ISBN
+XXXXXXXXXX,Invalid ISBN
+8254x67898,Invalid ISBN
+653256789a,Invalid ISBN
+65b32c56v7892,Invalid ISBN
+496(25)36859,Invalid ISBN
+8325497862545,Result-Valid ISBN
+8325497862547,Result-Invalid ISBN
+83 254 978 62545,Result-Valid ISBN
+978 0 471 48648 0,Result-Invalid ISBN
+832-54978-62545,Result-Valid ISBN
+832-54978-62542,Result-Invalid ISBN
+8325(49)7862545,Invalid length-over 13
+8325497862545x,Invalid ISBN
+83254978a6254d5,Invalid length-over 13
+8325497x8a6254d5x,Invalid ISBN
+""" """,Invalid ISBN
+letters,Invalid ISBN
+83$25 49@78-6%45,Invalid length-over 13
+lettersanx,Invalid ISBN
+123456789x,Result-Valid ISBN
+982547@654x,Invalid ISBN
+194382908X,Result-Valid ISBN
+(1943829080),Invalid ISBN

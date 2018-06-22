@@ -5,10 +5,8 @@ def num_length(num)
 	orig_str = num.downcase
 	str = orig_str.gsub(/([- ])/, '')
 	first_length = str.length
-	# p str
 	new_str = str.gsub(/[^Xx0-9 ]/, '')
 	str_length = new_str.length
-	# p new_str
 	if str_length == 13
 		if first_length > 13
 			"Invalid length-over 13"
@@ -16,7 +14,6 @@ def num_length(num)
 			check_thirteen(num)
 		end
 	elsif first_length == 10
-	# p str_length 
 		if str_length == 10 && str.include?("x") == true
 			check_x(num)
 		elsif first_length == 10 && str_length == 10
@@ -85,18 +82,10 @@ def check_ten(num)
 	value_arr = []
 	orig_str = num.downcase
 	str = orig_str.gsub(/([- ])/, '')
-	# p str
 	new_str = str.gsub(/[^Xx0-9 ]/, '')
-	# p new_str
 	num_str = new_str.split(//)
-	# p num_str
 	popped_element = num_str.pop
-	# p popped_element
 	match_element = popped_element.to_i
-	# p match_element
-	match_element
-	match_element
-	# p num_str
 	num_str.each do |x|
 		full_array << x.to_i
 	end
@@ -106,7 +95,6 @@ def check_ten(num)
 	end
 	sum = value_arr.sum
 	remainder = sum%11
-	# p remainder
 	if match_element == remainder
 		"Result-Valid ISBN"
 	elsif popped_element == "x" && remainder == 10
@@ -115,29 +103,3 @@ def check_ten(num)
 		"Result-Invalid ISBN"
 	end
 end
-
-# def csv_read(isbn,status)
-# 	data_array = []
-# 	data = CSV.read("isbn_file.csv")
-# 	data.each do |isbn|
-# 		isbn = num_length(num)
-# 		data_array << isbn
-# 		p data_array
-# 	end
-# 	open_file = CSV.open('file.csv', 'wb') do |csv|
-# 		csv << ["ISBN", "Status"]
-# 		csv << ["#{isbn}", "#{valid}"]
-# 	end
-# end
-
-
-
-# csv_open("1234567890", "Invalid")
-
-# p num_length("653256789a")
-# p check_x("653256789a")
-# p check_ten("653256789a")
-
-# p num_length("98&25$47@6%548")
-# p check_x("98&25$47@6%548")
-# p check_ten("98&25$47@6%548")
