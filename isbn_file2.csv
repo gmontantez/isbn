@@ -35,6 +35,3 @@ lettersanx,Invalid ISBN
 982547@654x,Invalid ISBN
 194382908X,Result-Valid ISBN
 (1943829080),Invalid ISBN
-1234567894,Result-Invalid ISBN
-83$2549@786%45,Invalid length-over 13
-123456789X,Result-Valid ISBN

@@ -1,7 +1,9 @@
+require 'aws-sdk-s3'
 require 'sinatra'
 require_relative 'isbn.rb'
 require_relative 'isbn_csv.rb'
-
+require_relative 'aws.rb'
+load './local_env.rb' if File.exist?('./local_env.rb')
 
 enable :sessions
 
@@ -47,7 +49,10 @@ get '/final_results' do
 	num = params[:num]
 	p CSV.read("isbn_file.csv")
 	data = CSV.read("isbn_file.csv")
-	erb :final_results, locals:{mod_num: session[:mod_num], num: num, data: data}
+	connect = connect_to_s3
+    connect
+    connect2 = connect_to_s3_2
+    erb :final_results, locals:{mod_num: session[:mod_num], num: num, data: data, connect2:connect2}
 end
 
 
