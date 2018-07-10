@@ -38,3 +38,5 @@ lettersanx,Invalid ISBN
 1234567894,Result-Invalid ISBN
 83$2549@786%45,Invalid length-over 13
 123456789X,Result-Valid ISBN
+83$2549@786%45,Invalid length-over 13
+1234567894,Result-Invalid ISBN
