@@ -1,17 +1,28 @@
-<h2><div>Valid or Invalid ISBN Result</div></h2>
-<h3><%=num%></h3>
-<h3><font color="#ff0000"><%=mod_num%></font></h3>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style>
+
+</style>
+</head>	
+<body class="background2">
+<center>
+
+<h2><font color="#ffff00"><div>Valid or Invalid ISBN Result</div></font></h2>
+<h3><font color="00FF00"><%=num%></font></h3>
+<h2><font color="#ff3300"><%=mod_num%></font></h2>
 <form method="post" action="results">
 </form>
 
 
-<h2>Please select "Enter Another ISBN" if you have another ISBN:
+<h2><font color="#ffff00">Please select "Enter Another ISBN" if you have another ISBN:
 <form method="get" action="redo">
 	<input type="submit" value ="Enter Another ISBN">
-</form></p></h2>
+</form></p></font></h2>
 
-<h2>Please select "Final Results" to view the final results list:
+<h2><font color="#ffff00">Please select "Final Results" to view the final results list:
 <form method="get" action="final_results">
 	<input type="submit" value ="Final Results">
-</form></p></h2>
+</form></p></font></h2>
 

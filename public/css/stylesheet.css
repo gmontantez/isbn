@@ -1,0 +1,56 @@
+body{
+ font-size: 130%;
+
+ text-align: center;
+ background-image: url(/img/library.jpg);
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: 100%;
+ background-attachment: fixed;
+ padding-top: 15px;
+}
+
+.background2 {
+    background-image: url(/img/lib_congress.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background3 {
+    background-image: url(/img/books.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+	color: #ffff00;/*yellow*/
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+}
+
+h3 {
+	font-weight: bold;
+	text-align: center;
+}
+
+ul {
+	text-align: center;
+	padding-top: .5px;
+	padding-bottom: 1.75rem;
+}
+li a {
+	text-align: center;
+	color: #00aaff;/*blue*/
+}
+
+a:hover {
+    background-color: yellow;
+}
+
+p.m {
+	text-align: center;
+	padding-bottom: .2rem;
+}
